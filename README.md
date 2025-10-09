@@ -55,3 +55,12 @@ This plot shows the same QC metrics **after filtering**. It confirms that poor-q
 <img src="figures/Csf2rb.png" alt="Csf2rb" width="33%"><img src="figures/Cbln4.png" alt="Cbln4" width="33%"><img src="figures/Sall1.png" alt="Sall1" width="33%">
 <img src="figures/Ptprc.png" alt="Ptprc" width="33%">
 
+
+
+## Annotations 
+
+
+![annotations](figures/ WT_Nannotations.png)
+
+![annotationsON](figures/WT_NannotationsON.png)
+
