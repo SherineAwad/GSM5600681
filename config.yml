@@ -1,0 +1,3 @@
+myObject: "WT"
+samples_file: "samples.tsv"
+annotation_file: "annotations.txt"
