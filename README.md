@@ -54,7 +54,7 @@ This plot shows the same QC metrics **after filtering**. It confirms that poor-q
 
 ![doublet thresholds](figures/threshold_curve.png)
 
-### Doublets marked at different thresholds 
+### Doublets marked in yellow at different thresholds 
 
 
 <img src="figures/umap_UMAP_doublets_thresh0.10.png" alt="Thresh0.10" width="50%"><img src="figures/umap_UMAP_doublets_thresh0.20.png" alt="Thresh0.20" width="50%">
