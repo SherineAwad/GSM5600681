@@ -17,6 +17,25 @@ This plot shows **raw quality control metrics** (e.g., number of genes per cell,
 
 ---
 
+### Filtering 
+
+We filter cells based on basic quality control metrics:  
+
+- Keep cells with **800–8000 detected genes**  
+- Keep cells with **1200–30000 total counts**  
+- Remove cells with **high mitochondrial content (>25%)**  
+
+```python
+combined_adata = combined_adata[
+    (combined_adata.obs['n_genes_by_counts'] > 800) &
+    (combined_adata.obs['n_genes_by_counts'] < 8000) &
+    (combined_adata.obs['total_counts'] > 1200) &
+    (combined_adata.obs['total_counts'] < 30000) &
+    (combined_adata.obs['pct_counts_mt'] < 25),
+    :
+]
+``` 
+
 ###  `violin_AfterQC.png`
 
 This plot shows the same QC metrics **after filtering**. It confirms that poor-quality cells were successfully removed based on chosen thresholds.
@@ -60,7 +79,7 @@ This plot shows the same QC metrics **after filtering**. It confirms that poor-q
 ## Annotations 
 
 
-![annotations](figures/WT_Nannotations.png)
+![annotations](figures/WT_annotations.png)
 
 ![annotationsON](figures/WT_annotationsON.png)
 
