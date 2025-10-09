@@ -60,7 +60,7 @@ This plot shows the same QC metrics **after filtering**. It confirms that poor-q
 ## Annotations 
 
 
-![annotations](figures/ WT_Nannotations.png)
+![annotations](figures/WT_Nannotations.png)
 
-![annotationsON](figures/WT_NannotationsON.png)
+![annotationsON](figures/WT_annotationsON.png)
 
