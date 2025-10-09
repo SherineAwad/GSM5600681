@@ -11,11 +11,11 @@ sys.modules['importlib.metadata'] = importlib_metadata
 # Parse input arguments
 parser = argparse.ArgumentParser()
 parser.add_argument('myObject')
+
 args = parser.parse_args()
 
 myObject = args.myObject
-newObject = "analysed_" + myObject
-base_name = os.path.splitext(os.path.basename(myObject))[0]
+newObject = "analysed.h5ad" 
 
 # Load data
 combined_adata = sc.read(myObject)

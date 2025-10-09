@@ -1,3 +1,4 @@
 myObject: "WT"
 samples_file: "samples.tsv"
 annotation_file: "annotations.txt"
+doublet_threshold: 0.5

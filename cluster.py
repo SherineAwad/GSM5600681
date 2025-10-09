@@ -15,8 +15,8 @@ parser = argparse.ArgumentParser()
 parser.add_argument('myObject')
 args = parser.parse_args()
 myObject = args.myObject
-base_name = os.path.splitext(os.path.basename(myObject))[0]
-newObject = f"clustered_{myObject}"
+newObject = "clustered.h5ad"  
+basename ="clustered" 
 
 # --- Load data ---
 combined_adata = sc.read(myObject)
@@ -37,7 +37,6 @@ plt.rcParams['savefig.dpi'] = 600
 # --- UMAP plot for clusters ---
 sc.pl.umap(combined_adata, color=["leiden"], save="_clusters.png", legend_loc="on data")
 
-'''
 # --- Marker genes dictionary ---
 marker_genes  = {
     "MG": ["Rlbp1","Gfap","Apoe","Notch1","Pax6","Slc1a3","Vim"],
@@ -82,7 +81,6 @@ sc.pl.dotplot(
     save=f'{basename}_markerGenes.png'
 )
 
-'''
 # --- Save processed AnnData ---
 combined_adata.obs_names_make_unique()
 combined_adata.write(newObject, compression="gzip")
