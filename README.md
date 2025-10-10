@@ -48,12 +48,11 @@ This plot shows the same QC metrics **after filtering**. It confirms that poor-q
 
 
 ## Clusters UMAP 
-![clusters umap](figures/umap_clusters.png)
+![clusters umap](figures/umap_clusters.png?v=3)
 
 
 ## Marker Genes Dotplot 
-![markers dotplot](figures/dotplot_analysed_WT_markerGenes.png)
-
+![markers dotplot](figures/dotplot_analysed_WT_markerGenes.png?v=3)
 ## Marker Genes UMAP 
 
 <img src="figures/Nrl.png" alt="Nrl" width="33%"><img src="figures/Crx.png" alt="Crx" width="33%"><img src="figures/Pcp4.png" alt="Pcp4" width="33%">
@@ -72,7 +71,8 @@ This plot shows the same QC metrics **after filtering**. It confirms that poor-q
 <img src="figures/Onecut1.png" alt="Onecut1" width="33%"><img src="figures/Isl2.png" alt="Isl2" width="33%"><img src="figures/Pou4f3.png" alt="Pou4f3" width="33%">
 <img src="figures/Lhx1.png" alt="Lhx1" width="33%"><img src="figures/Gfap.png" alt="Gfap" width="33%"><img src="figures/Pax2.png" alt="Pax2" width="33%">
 <img src="figures/Csf2rb.png" alt="Csf2rb" width="33%"><img src="figures/Cbln4.png" alt="Cbln4" width="33%"><img src="figures/Sall1.png" alt="Sall1" width="33%">
-<img src="figures/Ptprc.png" alt="Ptprc" width="33%">
+<img src="figures/Ptprc.png" alt="Ptprc" width="33%"><img src="figures/Chat.png" alt="Chat" width="33%"><img src="figures/Rpe65.png" alt="Rpe65"  width="33%">
+<img src="figures/Acta2.png" alt="Acta2" width="33%">
 
 
 
