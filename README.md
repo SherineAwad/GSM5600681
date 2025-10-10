@@ -52,7 +52,8 @@ This plot shows the same QC metrics **after filtering**. It confirms that poor-q
 
 
 ## Marker Genes Dotplot 
-![markers dotplot](figures/dotplot_analysed_WT_markerGenes.png?v=3)
+![markers dotplot](figures/dotplot_clustered_markerGenes.png)
+
 ## Marker Genes UMAP 
 
 <img src="figures/Nrl.png" alt="Nrl" width="33%"><img src="figures/Crx.png" alt="Crx" width="33%"><img src="figures/Pcp4.png" alt="Pcp4" width="33%">
