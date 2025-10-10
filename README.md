@@ -73,8 +73,7 @@ This plot shows the same QC metrics **after filtering**. It confirms that poor-q
 <img src="figures/Lhx1.png" alt="Lhx1" width="33%"><img src="figures/Gfap.png" alt="Gfap" width="33%"><img src="figures/Pax2.png" alt="Pax2" width="33%">
 <img src="figures/Csf2rb.png" alt="Csf2rb" width="33%"><img src="figures/Cbln4.png" alt="Cbln4" width="33%"><img src="figures/Sall1.png" alt="Sall1" width="33%">
 <img src="figures/Ptprc.png" alt="Ptprc" width="33%"><img src="figures/Chat.png" alt="Chat" width="33%"><img src="figures/Rpe65.png" alt="Rpe65"  width="33%">
-<img src="figures/Acta2.png" alt="Acta2" width="33%">
-
+<img src="figures/Acta2.png" alt="Acta2" width="33%"> <img src="figures/Otx2.png" alt="Otx2" width="33%">
 
 
 ## Annotations 
