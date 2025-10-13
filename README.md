@@ -82,3 +82,55 @@ This plot shows the same QC metrics **after filtering**. It confirms that poor-q
 ![annotations](figures/WT_annotations.png?v=4)
 
 ![annotationsON](figures/WT_annotationsON.png?v=4)
+
+
+## 🔬 Comparing Neurog2 (Neurog2_9SA_5weeks, Neurog2_9SA_2mo) with WT
+
+We used the script **`compare_pearson.py`** to evaluate transcriptional similarity between cell types in the Neurog2 samples and those in the WT sample.
+
+### ⚙️ Analysis workflow
+
+```
+1. **Input and subsetting**  
+   The analysis uses two `.h5ad` files — one for the Neurog2 samples and one for the WT sample.  
+   The script selects only the specified samples and aligns both datasets to the same set of genes.
+
+2. **Averaging gene expression per cell type**  
+   For each dataset, the mean expression level of every gene is calculated within each cell type.  
+   This step produces one representative expression profile per cell type.
+
+3. **Filtering genes**  
+   Genes are kept only if their average expression is above a user-defined cutoff and they are expressed in at least one cell.  
+   This ensures that the analysis focuses on biologically meaningful and active genes.
+
+4. **Normalization**  
+   Each cell type’s expression profile is standardized so that genes are comparable across cell types and samples.  
+   This normalization removes global intensity differences and highlights relative expression patterns.
+
+5. **Pearson correlation between cell types**  
+   The script then compares every Neurog2 cell type to every WT cell type by calculating the Pearson correlation between their average expression profiles.  
+   This measures how similar the expression patterns are between the two cell types across all retained genes.
+
+6. **Heatmap visualization**  
+   The resulting correlation matrix is shown as a heatmap:  
+   - The **rows** correspond to Neurog2 cell types.  
+   - The **columns** correspond to WT cell types.  
+   - The **color intensity** reflects the correlation strength — higher values indicate more similar transcriptional profiles.
+```
+
+
+
+##### Average exp > 0.1 and at least the gene expressed on one celltype 
+- Retained 1311 genes out of 19780 total.
+![Pearson with avg exp >0.1](heatmap_celltypesp5.png)
+
+
+##### Average exp > 0.2 and at least the gene expressed on one celltype 
+-  Retained 358 genes out of 19780 total.
+![Pearson with avg exp >0.2](heatmap_celltypesp2.png)
+
+##### Average exp > 0.5 and at least the gene expressed on one celltype 
+- Retained 18 genes out of 19780 total.
+![Pearson with avg exp >0.5](heatmap_celltypesp5.png)
+
+
