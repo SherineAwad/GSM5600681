@@ -88,7 +88,7 @@ This plot shows the same QC metrics **after filtering**. It confirms that poor-q
 
 We used the script **`compare_pearson.py`** to evaluate transcriptional similarity between cell types in the Neurog2 samples and those in the WT sample.
 
-### ⚙️ Analysis workflow
+### ⚙️  What `compare_pearson.py` does?
 
 ```
 1. **Input and subsetting**  
@@ -119,20 +119,28 @@ We used the script **`compare_pearson.py`** to evaluate transcriptional similari
 ```
 
 
-###### PENDING: In progress
+### PENDING: In progress
 
+### Average exp > 0.05 and at least the gene expressed on one celltype 
 
-##### Average exp > 0.1 and at least the gene expressed on one celltype 
+- Retained 3380 genes out of 19780 total
+![Pearson with avg exp >0.1](heatmap_celltypesp05.png?v=2)
+
+### Average exp > 0.1 and at least the gene expressed on one celltype 
+
 - Retained 1311 genes out of 19780 total.
-![Pearson with avg exp >0.1](heatmap_celltypesp5.png)
+![Pearson with avg exp >0.1](heatmap_celltypesp5.png?v=2)
 
 
-##### Average exp > 0.2 and at least the gene expressed on one celltype 
+### Average exp > 0.2 and at least the gene expressed on one celltype 
+
 -  Retained 358 genes out of 19780 total.
-![Pearson with avg exp >0.2](heatmap_celltypesp2.png)
+![Pearson with avg exp >0.2](heatmap_celltypesp2.png?v=2)
 
-##### Average exp > 0.5 and at least the gene expressed on one celltype 
+### Average exp > 0.5 and at least the gene expressed on one celltype 
+
 - Retained 18 genes out of 19780 total.
-![Pearson with avg exp >0.5](heatmap_celltypesp5.png)
+![Pearson with avg exp >0.5](heatmap_celltypesp5.png?v=2)
+
 
 
