@@ -121,23 +121,23 @@ We used the script **`compare_pearson.py`** to evaluate transcriptional similari
 
 ### PENDING: In progress
 
-### Average exp > 0.05 and at least the gene expressed on one celltype 
+### Average exp > 0.05 and at least the gene expressed in one celltype 
 
 - Retained 3380 genes out of 19780 total
-![Pearson with avg exp >0.1](heatmap_celltypesp05.png?v=2)
+![Pearson with avg exp >0.05](heatmap_celltypesp05.png?v=2)
 
-### Average exp > 0.1 and at least the gene expressed on one celltype 
+### Average exp > 0.1 and at least the gene expressed in one celltype 
 
 - Retained 1311 genes out of 19780 total.
 ![Pearson with avg exp >0.1](heatmap_celltypesp5.png?v=2)
 
 
-### Average exp > 0.2 and at least the gene expressed on one celltype 
+### Average exp > 0.2 and at least the gene expressed in one celltype 
 
 -  Retained 358 genes out of 19780 total.
 ![Pearson with avg exp >0.2](heatmap_celltypesp2.png?v=2)
 
-### Average exp > 0.5 and at least the gene expressed on one celltype 
+### Average exp > 0.5 and at least the gene expressed in one celltype 
 
 - Retained 18 genes out of 19780 total.
 ![Pearson with avg exp >0.5](heatmap_celltypesp5.png?v=2)
