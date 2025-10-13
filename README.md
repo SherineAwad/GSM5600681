@@ -88,6 +88,8 @@ This plot shows the same QC metrics **after filtering**. It confirms that poor-q
 
 We used the script **`compare_pearson.py`** to evaluate transcriptional similarity between cell types in the Neurog2 samples and those in the WT sample.
 
+The neurog2 samples are analysed in [Neurog2](https://github.com/SherineAwad/Neurog2)
+
 ### ⚙️  What `compare_pearson.py` does?
 
 ```
