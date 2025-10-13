@@ -16,6 +16,7 @@ args = parser.parse_args()
 
 myObject = args.myObject
 newObject = "analysed.h5ad" 
+basename = "analysed" 
 
 # Load data
 combined_adata = sc.read(myObject)
@@ -36,7 +37,7 @@ sc.pp.neighbors(combined_adata)
 
 # UMAP
 sc.tl.umap(combined_adata)
-sc.pl.umap(combined_adata, color='sample', size=2, save=f'_{base_name}.png')
+sc.pl.umap(combined_adata, color='sample', size=2, save=f'_{basename}.png')
 # Save processed object
 combined_adata.write(newObject)
 

@@ -42,13 +42,15 @@ marker_genes  = {
     "MG": ["Rlbp1","Gfap","Apoe","Notch1","Pax6","Slc1a3","Vim"],
     "Rod": ["Rho","Nrl","Crx","Rom1"],
     "Cones": ["Opn1mw","Opn1sw","Arr3","Thrb","Gnat2"],
-    "BC": ["Vsx1", "Sebox","Bhlhe23","Cabp5","Vsx1","Pcp4","Isl1"] ,
-    "AC": ["Gad1","Gad2","Slc6a9","Tfap2b","Prox1","Pax6","Calb2","Pcp4","Elavl3","Isl1"],
+    "BC": ["Otx2","Vsx1", "Sebox","Bhlhe23","Cabp5","Vsx1","Pcp4","Isl1"] ,
+    "AC": ["Chat","Gad1","Gad2","Slc6a9","Tfap2b","Prox1","Pax6","Calb2","Pcp4","Elavl3","Isl1"],
     "HC": ["Lhx1","Cbln4","Calb1","Nefl","Nefm", "Onecut1", "Onecut2"],
     "RGC": ["Nefl","Nefm","Sncg","Thy1","Ebf3","Rbfox3","Isl1","Isl2","Pou4f1","Pou4f3","Rbpms"],
     "Microglia": ["Ptprc","Csf2rb","Sall1"],
-    "Astrocytes":["Pax2","Igf2", "Gfap"]
-}
+    "Astrocytes":["Pax2","Igf2", "Gfap"],
+    "RPE":["Rpe65"],
+    "Vascular cells": ["Acta2"]
+    }
 
 # --- Filter marker genes to keep only those present in data ---
 filtered_marker_genes = {
