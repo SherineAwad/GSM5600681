@@ -158,14 +158,17 @@ The neurog2 samples are analysed in [Neurog2](https://github.com/SherineAwad/Neu
 ### Debugging 
 
 #### Printing expressions 
+```
+python expression_by_celltype.py \
+    -i annotated_reclustered_refined_doubletsRemoved_threshold0.8_neurog2.h5ad \
+    -o neurog2_expressions.csv
 
-`python expression_by_celltype.py -i annotated_reclustered_refined_doubletsRemoved_threshold0.8_neurog2.h5ad -o neurog2_expressions.csv`
-
-[Download neurog2 expressions here:](https://docs.google.com/spreadsheets/d/1RiJ8asNsaNljPcumuPw5cYhvWd9cKP0t8ombwt1FcS8/edit?usp=sharing)
+```
+[Download neurog2 expressions here](https://docs.google.com/spreadsheets/d/1RiJ8asNsaNljPcumuPw5cYhvWd9cKP0t8ombwt1FcS8/edit?usp=sharing)
 
 
 `python expression_by_celltype.py -i annotated.h5ad  -o GSM_expressions.csv`
 
-[Download GSM5600681 exressions here:](https://docs.google.com/spreadsheets/d/1nHjkaDNwATYtro6lHnJ7wT6_5g9j500BNqr7L_C02Ck/edit?usp=sharing) 
+[Download GSM5600681 exressions here](https://docs.google.com/spreadsheets/d/1nHjkaDNwATYtro6lHnJ7wT6_5g9j500BNqr7L_C02Ck/edit?usp=sharing) 
 
 
