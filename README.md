@@ -105,25 +105,11 @@ The neurog2 samples are analysed in [Neurog2](https://github.com/SherineAwad/Neu
    Genes are kept only if their average expression is above a user-defined cutoff and they are expressed in at least one cell.  
    This ensures that the analysis focuses on biologically meaningful and active genes.
 
-4. **Normalization**  
-   Each cell type’s expression profile is standardized so that genes are comparable across cell types and samples.  
-   This normalization removes global intensity differences and highlights relative expression patterns.
-
-5. **Pearson correlation between cell types**  
+4. **Pearson correlation between cell types**  
    The script then compares every Neurog2 cell type to every WT cell type by calculating the Pearson correlation between their average expression profiles.  
    This measures how similar the expression patterns are between the two cell types across all retained genes.
     
-   **Average expression per cell type**
-   - For each cell type, compute the **average expression of each gene across all cells** of that type
-   - Result: a matrix of `cell types × genes`
-
-   **Pairwise correlation**
-   - Compute **all pairwise Pearson correlations** between the rows (cell types) of the two datasets
-   - Uses z-scored expression vectors (standardized per cell type)
-   - Result: a correlation matrix `cell types (dataset1) × cell types (dataset2)`
-
-
-6. **Heatmap visualization**  
+5. **Heatmap visualization**  
    The resulting correlation matrix is shown as a heatmap:  
    - The **rows** correspond to Neurog2 cell types.  
    - The **columns** correspond to WT cell types.  
