@@ -161,3 +161,12 @@ python compare_pearson.py annotated_reclustered_refined_doubletsRemoved_threshol
 python compare_pearson.py annotated_reclustered_refined_doubletsRemoved_threshold0.8_neurog2.h5ad annotated.h5ad --samples1 Neurog2_9SA_5weeks Neurog2_9SA_2mo --sample2 WT  --output heatmap_1.png --gene_cutoff 0.
 ✅ Retained 5437 genes out of 19780 total.
 ```
+
+
+#### Printing expressions for diagnoses 
+```
+python print_expression.py annotated_reclustered_refined_doubletsRemoved_threshold0.8_neurog2.h5ad neurog2.csv --samples Neurog2_9SA_5weeks Neurog2_9SA_2mo 
+```
+
+
+[📥 Download neurog2 Expressions](https://docs.google.com/spreadsheets/d/1OH2wrqN7HCiSpkCQfB68l-ik--XXCsDwTcvmpyZV-mQ/edit?usp=sharing)
