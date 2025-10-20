@@ -18,7 +18,7 @@ parser.add_argument("h5ad2", help="Path to second h5ad object")
 parser.add_argument("--samples1", nargs='+', required=True, help="Sample names from first object")
 parser.add_argument("--sample2", required=True, help="Sample name from second object")
 parser.add_argument("--gene_cutoff", type=float, default=0.1,
-                    help="Minimum average expression threshold for genes (default: 0.1)")
+                    help="Minimum average expression threshold for genes in any celltype (default: 0.1)")
 parser.add_argument("--output", default="correlation_celltypes.png", help="Output heatmap file")
 args = parser.parse_args()
 
@@ -52,41 +52,36 @@ expr1_ct = adata1_subset.to_df().groupby(adata1_subset.obs['celltype'], observed
 expr2_ct = adata2_subset.to_df().groupby(adata2_subset.obs['celltype'], observed=False).mean()
 
 # -------------------------------
-# GENE FILTERING
+# GENE FILTERING - FIXED
 # -------------------------------
 print("🔹 Filtering genes based on expression cutoff and presence...")
-# Mean expression across all cell types in both datasets
-mean_expr = pd.concat([expr1_ct.mean(axis=0), expr2_ct.mean(axis=0)], axis=1).mean(axis=1)
 
-# Expression presence (gene expressed in at least one cell type)
-expressed_in_ct = (
-    ((expr1_ct > 0).sum(axis=0) > 0) |
-    ((expr2_ct > 0).sum(axis=0) > 0)
+# Keep genes that are expressed > cutoff in ANY celltype in EITHER dataset
+expressed_in_any_ct = (
+    (expr1_ct > args.gene_cutoff).any(axis=0) |
+    (expr2_ct > args.gene_cutoff).any(axis=0)
 )
 
-# Keep genes that pass both filters
-genes_to_keep = mean_expr[(mean_expr > args.gene_cutoff) & expressed_in_ct].index
+# Keep genes that are expressed > 0 in at least one celltype in EITHER dataset
+present_in_any_ct = (
+    (expr1_ct > 0).any(axis=0) |
+    (expr2_ct > 0).any(axis=0)
+)
+
+# Combine both filters
+genes_to_keep = expressed_in_any_ct & present_in_any_ct
+genes_to_keep = genes_to_keep[genes_to_keep].index
+
 print(f"✅ Retained {len(genes_to_keep)} genes out of {len(common_genes)} total.")
 
 expr1_ct = expr1_ct.loc[:, genes_to_keep]
 expr2_ct = expr2_ct.loc[:, genes_to_keep]
 
 # -------------------------------
-# STANDARDIZE ROWS (cell types)
-# -------------------------------
-print("🔹 Standardizing expression (z-score per celltype)...")
-X1_std = expr1_ct.sub(expr1_ct.mean(axis=1), axis=0).div(expr1_ct.std(axis=1), axis=0)
-X2_std = expr2_ct.sub(expr2_ct.mean(axis=1), axis=0).div(expr2_ct.std(axis=1), axis=0)
-
-# Replace NaNs (if any celltype has 0 variance)
-X1_std = X1_std.fillna(0)
-X2_std = X2_std.fillna(0)
-
-# -------------------------------
-# VECTORISED PEARSON CORRELATION
+# PEARSON CORRELATION (without z-scoring)
 # -------------------------------
 print("🔹 Computing Pearson correlation between celltypes...")
-corr_matrix = np.dot(X1_std.values, X2_std.values.T) / X1_std.shape[1]
+corr_matrix = np.corrcoef(expr1_ct.values, expr2_ct.values)[:expr1_ct.shape[0], expr1_ct.shape[0]:]
 corr_matrix = pd.DataFrame(corr_matrix, index=expr1_ct.index, columns=expr2_ct.index)
 
 # -------------------------------
@@ -102,4 +97,3 @@ plt.tight_layout()
 plt.savefig(args.output, dpi=600)
 
 print("✅ Done! Correlation heatmap saved.")
-

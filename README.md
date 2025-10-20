@@ -131,44 +131,33 @@ The neurog2 samples are analysed in [Neurog2](https://github.com/SherineAwad/Neu
 ```
 
 
-### PENDING: In progress
-
-### Average exp > 0.05 and at least the gene expressed in one celltype 
-
-- Retained 3380 genes out of 19780 total
-![Pearson with avg exp >0.05](heatmap_celltypesp05.png?v=2)
-
-### Average exp > 0.1 and at least the gene expressed in one celltype 
-
-- Retained 1311 genes out of 19780 total.
-![Pearson with avg exp >0.1](heatmap_celltypesp5.png?v=2)
-
-
-### Average exp > 0.2 and at least the gene expressed in one celltype 
-
--  Retained 358 genes out of 19780 total.
-![Pearson with avg exp >0.2](heatmap_celltypesp2.png?v=2)
-
-### Average exp > 0.5 and at least the gene expressed in one celltype 
-
-- Retained 18 genes out of 19780 total.
-![Pearson with avg exp >0.5](heatmap_celltypesp5.png?v=2)
-
-
-### Debugging 
-
-#### Printing expressions 
-```
-python expression_by_celltype.py \
-    -i annotated_reclustered_refined_doubletsRemoved_threshold0.8_neurog2.h5ad \
-    -o neurog2_expressions.csv
+#### Using cutoff 0.05 
+![0.05](heatmap05.png)
 
 ```
-[Download neurog2 expressions here](https://docs.google.com/spreadsheets/d/1RiJ8asNsaNljPcumuPw5cYhvWd9cKP0t8ombwt1FcS8/edit?usp=sharing)
+python compare_pearson.py annotated_reclustered_refined_doubletsRemoved_threshold0.8_neurog2.h5ad annotated.h5ad --samples1 Neurog2_9SA_5weeks Neurog2_9SA_2mo --sample2 WT  --output heatmap05.png --gene_cutoff 0.05 
+✅ Retained 17287 genes out of 19780 total.
+``` 
 
+#### Using cutoff 0.1 
+![0.1](heatmap_1.png)
 
-`python expression_by_celltype.py -i annotated.h5ad  -o GSM_expressions.csv`
+```
+python compare_pearson.py annotated_reclustered_refined_doubletsRemoved_threshold0.8_neurog2.h5ad annotated.h5ad --samples1 Neurog2_9SA_5weeks Neurog2_9SA_2mo --sample2 WT  --output heatmap_1.png --gene_cutoff 0.1 
+✅ Retained 14841 genes out of 19780 total.
+``` 
 
-[Download GSM5600681 exressions here](https://docs.google.com/spreadsheets/d/1nHjkaDNwATYtro6lHnJ7wT6_5g9j500BNqr7L_C02Ck/edit?usp=sharing) 
+#### Using cutoff 0.2 
+![0.2](heatmap_2.png)
 
+```
+python compare_pearson.py annotated_reclustered_refined_doubletsRemoved_threshold0.8_neurog2.h5ad annotated.h5ad --samples1 Neurog2_9SA_5weeks Neurog2_9SA_2mo --sample2 WT  --output heatmap_1.png --gene_cutoff 0.2
+✅ Retained 11131 genes out of 19780 total.
+```
 
+#### Using cutoff 0.5 
+![0.5](heatmap_5.png)
+```
+python compare_pearson.py annotated_reclustered_refined_doubletsRemoved_threshold0.8_neurog2.h5ad annotated.h5ad --samples1 Neurog2_9SA_5weeks Neurog2_9SA_2mo --sample2 WT  --output heatmap_1.png --gene_cutoff 0.
+✅ Retained 5437 genes out of 19780 total.
+```
