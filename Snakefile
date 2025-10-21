@@ -1,6 +1,9 @@
 rule all:
     input:
-        expand("noDoublets.h5ad")
+        expand("{myObject}.h5ad", myObject=config["myObject"]),
+        expand("analysed.h5ad"), 
+        expand("clustered.h5ad"),
+        expand("annotated.h5ad")
 
 
 rule preprocess:
@@ -13,41 +16,31 @@ rule preprocess:
     shell:
         "python preprocess.py {params} {input}"
 
-rule doublets: 
-     input: 
-        expand("{myObject}.h5ad", myObject=config["myObject"])
-     params: 
-        threshold = config['doublet_threshold'] 
-     output: 
-        expand("noDoublets.h5ad", myObject=config["myObject"])
-     shell: 
-        "python detect_doublets.py {input} {params}" 
-
 rule analyse:
     input:
-        expand("noDoublets.h5ad", myObject=config["myObject"])
+        expand("{myObject}.h5ad", myObject=config["myObject"]), 
     output:
-        expand("analysed.h5ad", myObject=config["myObject"])
+        expand("analysed.h5ad")
     shell:
         "python analyse.py {input}"
 
 
 rule cluster:
     input:
-        expand("analysed.h5ad", myObject=config["myObject"])
+        expand("analysed.h5ad")
     output:
-        expand("clustered.h5ad", myObject=config["myObject"])
+        expand("clustered.h5ad")
     shell:
         "python cluster.py {input}"
 
 
 rule annotate:
     input:
-        expand("clustered.h5ad", myObject=config["myObject"])
+        expand("clustered.h5ad")
     params:
         annotations=config["annotation_file"]
     output:
-        expand("annotated.h5ad", myObject=config["myObject"])
+        expand("annotated.h5ad")
     shell:
         "python annotate.py {input} {params}"
 
