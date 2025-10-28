@@ -148,26 +148,6 @@ python compare_pearson.py annotated_reclustered_refined_doubletsRemoved_threshol
 ✅ Retained 5437 genes out of 19780 total.
 ```
 
-```
-python compare_pearson1.py annotated_reclustered_refined_doubletsRemoved_threshold0.8_neurog2.h5ad annotated.h5ad --samples1 Neurog2_9SA_5weeks Neurog2_9SA_2mo --sample2 WT  --output heatmapOne.png --gene_cutoff 1
-python: can't open file '/nfs/turbo/umms-thahoang/sherine/GSE184933/compare_pearson1.py': [Errno 2] No such file or directory
-(scanpy_solo_env) [sherinem@gl3066 GSE184933]$ python compare_pearson.py annotated_reclustered_refined_doubletsRemoved_threshold0.8_neurog2.h5ad annotated.h5ad --samples1 Neurog2_9SA_5weeks Neurog2_9SA_2mo --sample2 WT  --output heatmapOne.png --gene_cutoff 1
-/nfs/turbo/umms-thahoang/sherine/miniconda/envs/scanpy_solo_env/lib/python3.9/site-packages/louvain/__init__.py:54: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
-  from pkg_resources import get_distribution, DistributionNotFound
-🔹 Loading data...
-🔹 Subsetting samples...
-🔹 Aligning genes between datasets...
-🔹 Averaging expression per cell type...
-🔹 Filtering genes based on expression cutoff and presence...
-✅ Retained 2150 genes out of 19780 total.
-🔹 Computing Pearson correlation between celltypes...
-🔹 Plotting heatmap and saving to heatmapOne.png...
-✅ Done! Correlation heatmap saved.
-y_solo_env) [sherinem@gl3066 GSE184933]$ python compare_pearson.py annotated_reclustered_refined_doubletsRemoved_threshold0.8_neurog2.h5ad annotated.h5ad --samples1 Neurog2_9SA_5weeks Neurog2_9SA_2mo --sample2 WT  --output heatmapTwo.png --gene_cutoff 2
-
-✅ Retained 564 genes out of 19780 total.
-```
-
 
 # 🧩 For Debugging Issues
 
