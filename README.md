@@ -266,7 +266,7 @@ adata.obs columns: ['sample', 'n_genes_by_counts', 'log1p_n_genes_by_counts', 't
 adata.var columns: ['mt', 'n_cells_by_counts', 'mean_counts', 'log1p_mean_counts', 'pct_dropout_by_counts', 'total_counts', 'log1p_total_counts', 'n_cells', 'highly_variable', 'means', 'dispersions', 'dispersions_norm', 'mean', 'std']
 
 No additional layers found.
-
+``` 
 
 ### 💾 Command & Output for WT
 ```bash
