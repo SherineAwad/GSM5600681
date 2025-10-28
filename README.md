@@ -148,7 +148,7 @@ python compare_pearson.py annotated_reclustered_refined_doubletsRemoved_threshol
 ✅ Retained 5437 genes out of 19780 total.
 ```
 
-
+```
 python compare_pearson1.py annotated_reclustered_refined_doubletsRemoved_threshold0.8_neurog2.h5ad annotated.h5ad --samples1 Neurog2_9SA_5weeks Neurog2_9SA_2mo --sample2 WT  --output heatmapOne.png --gene_cutoff 1
 python: can't open file '/nfs/turbo/umms-thahoang/sherine/GSE184933/compare_pearson1.py': [Errno 2] No such file or directory
 (scanpy_solo_env) [sherinem@gl3066 GSE184933]$ python compare_pearson.py annotated_reclustered_refined_doubletsRemoved_threshold0.8_neurog2.h5ad annotated.h5ad --samples1 Neurog2_9SA_5weeks Neurog2_9SA_2mo --sample2 WT  --output heatmapOne.png --gene_cutoff 1
@@ -166,7 +166,7 @@ python: can't open file '/nfs/turbo/umms-thahoang/sherine/GSE184933/compare_pear
 y_solo_env) [sherinem@gl3066 GSE184933]$ python compare_pearson.py annotated_reclustered_refined_doubletsRemoved_threshold0.8_neurog2.h5ad annotated.h5ad --samples1 Neurog2_9SA_5weeks Neurog2_9SA_2mo --sample2 WT  --output heatmapTwo.png --gene_cutoff 2
 
 ✅ Retained 564 genes out of 19780 total.
-
+```
 
 
 # 🧩 For Debugging Issues
