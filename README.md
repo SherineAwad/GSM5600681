@@ -169,41 +169,102 @@ y_solo_env) [sherinem@gl3066 GSE184933]$ python compare_pearson.py annotated_rec
 
 
 
+# 🧩 For Debugging Issues
 
-#### Printing expressions for diagnoses 
-```
-python print_expression.py annotated_reclustered_refined_doubletsRemoved_threshold0.8_neurog2.h5ad neurog2.csv --samples Neurog2_9SA_5weeks Neurog2_9SA_2mo 
-```
+### 💾 Command & Output
+```bash
+(scanpy_solo_env) [sherinem@gl3057 GSE184933]$ python print_h5ad.py annotated_reclustered_refined_doubletsRemoved_threshold0.8_neurog2.h5ad 
+/nfs/turbo/umms-thahoang/sherine/miniconda/envs/scanpy_solo_env/lib/python3.9/site-packages/louvain/__init__.py:54: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  from pkg_resources import get_distribution, DistributionNotFound
+Loading AnnData object from: annotated_reclustered_refined_doubletsRemoved_threshold0.8_neurog2.h5ad
 
+==================================================
+BASIC AnnData INFORMATION
+==================================================
+Overall shape: (39764, 39597) (cells: 39764, genes: 39597)
+Observation names (cells): ['AAACCAAAGCCATACA-1', 'AAACCCGCAATCCGTC-1', 'AAACCCGCATCACTGC-1', 'AAACCCGCATCGTACC-1', 'AAACCCTGTTGCTGTG-1']...
+Variable names (genes): ['Xkr4', 'Gm1992', 'Gm19938', 'ENSMUSG00000142494', 'Gm37381']...
 
-[📥 Download neurog2 Expressions](https://docs.google.com/spreadsheets/d/1OH2wrqN7HCiSpkCQfB68l-ik--XXCsDwTcvmpyZV-mQ/edit?usp=sharing)
+=== adata.X (Primary Expression Matrix) ===
+Shape: (39764, 39597) (cells: 39764, genes: 39597)
+Type: dense
+Data type: float32
+Min: -6.156065
+Max: 199.404129
+Mean: 0.000000
+Std: 0.999985
+Non-zero values: 1574535108
+Zero values: 0
+Sparsity: 0.0000 (0.00%)
 
+Top 5 genes (first 5 rows):
+  Xkr4: min=-0.7485, max=4.9478, mean=0.0000
+  Gm1992: min=-0.1218, max=10.4576, mean=0.0000
+  Gm19938: min=-0.2123, max=9.5976, mean=0.0000
+  ENSMUSG00000142494: min=-0.0188, max=53.2843, mean=-0.0000
+  Gm37381: min=-0.0230, max=43.5026, mean=-0.0000
 
+Top 5 cells (first 5 columns):
+  AAACCAAAGCCATACA-1: min=-2.2320, max=45.7361, mean=-0.0210
+  AAACCCGCAATCCGTC-1: min=-1.8717, max=31.5131, mean=0.0172
+  AAACCCGCATCACTGC-1: min=-2.4021, max=115.1231, mean=0.0330
+  AAACCCGCATCGTACC-1: min=-2.7288, max=99.6983, mean=-0.0177
+  AAACCCTGTTGCTGTG-1: min=-1.8227, max=75.3620, mean=0.0293
 
-## Neurog2 
+adata.raw type: <class 'anndata._core.raw.Raw'>
 
-- **adata.X**  
-  - Min: -6.16  
-  - Max: 199.40  
-  - Mean: 0.00
+=== adata.raw.X (Raw Expression Matrix) ===
+Shape: (39764, 40007) (cells: 39764, genes: 40007)
+Type: dense
+Data type: float32
+Min: -4.656951
+Max: 10.000000
+Mean: -0.007822
+Std: 0.693484
+Non-zero values: 1590838348
+Zero values: 0
+Sparsity: 0.0000 (0.00%)
 
-- **adata.raw**  
-  - Min: -4.66  
-  - Max: 10.00  
-  - Mean: -0.01
+Top 5 genes (first 5 rows):
+  Xkr4: min=-0.7183, max=5.1481, mean=0.0526
+  Gm1992: min=-0.1151, max=10.0000, mean=0.0014
+  Gm19938: min=-0.2098, max=10.0000, mean=0.0111
+  ENSMUSG00000142494: min=-0.0205, max=10.0000, mean=-0.0170
+  Gm37381: min=-0.0204, max=10.0000, mean=-0.0151
 
+Top 5 cells (first 5 columns):
+  AAACCAAAGCCATACA-1: min=-2.1655, max=10.0000, mean=-0.0234
+  AAACCCGCAATCCGTC-1: min=-1.9220, max=10.0000, mean=0.0131
+  AAACCCGCATCACTGC-1: min=-2.2012, max=10.0000, mean=0.0207
+  AAACCCGCATCGTACC-1: min=-2.9586, max=10.0000, mean=-0.0216
+  AAACCCTGTTGCTGTG-1: min=-1.8224, max=10.0000, mean=0.0171
+
+==================================================
+COMPARISON: adata.X vs adata.raw.X
+==================================================
+Same shape: False
+
+==================================================
+CATEGORICAL OBSERVATIONS
+==================================================
+Found 3 categorical columns:
+
+Column: sample (3 unique values)
+Values: ['control_2mo', 'Neurog2_9SA_2mo', 'Neurog2_9SA_5weeks']
+---
+Column: leiden (51 unique values)
+Values: ['0', '6', '3', '10', '5', '8', '15', '4', '1', '9', '13', '18', '2', '19', '20', '16', '21', '22', '12', '23', '24', '14', '17', '27', '28', '30', '34', '35', '36', '37', '38', '39', '40', '32', '7', '41', '29', '42', '43', '25', '44', '26', '45', '11', '31', '46', '47', '48', '49', '50', '33']
+---
+Column: celltype (6 unique values)
+Values: ['MG', 'Rod', 'Cones', 'BC', 'MGPC', 'AC']
 ---
 
-## WT 
+==================================================
+ADDITIONAL METADATA
+==================================================
+adata.obs columns: ['sample', 'n_genes_by_counts', 'log1p_n_genes_by_counts', 'total_counts', 'log1p_total_counts', 'pct_counts_in_top_50_genes', 'pct_counts_in_top_100_genes', 'pct_counts_in_top_200_genes', 'pct_counts_in_top_500_genes', 'total_counts_mt', 'log1p_total_counts_mt', 'pct_counts_mt', 'n_genes', 'doublet_score', 'predicted_doublet', 'leiden', 'celltype']
+adata.var columns: ['mt', 'n_cells_by_counts', 'mean_counts', 'log1p_mean_counts', 'pct_dropout_by_counts', 'total_counts', 'log1p_total_counts', 'n_cells', 'highly_variable', 'means', 'dispersions', 'dispersions_norm', 'mean', 'std']
 
-- **adata.X**  
-  - Min: -10.00  
-  - Max: 10.00  
-  - Mean: -0.01
+No additional layers found.
 
-- **adata.raw**  
-  - Min: 0.00  
-  - Max: 4105.00  
-  - Mean: 0.14
-
-
+```
