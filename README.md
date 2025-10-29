@@ -151,6 +151,11 @@ python compare_pearson.py annotated_reclustered_refined_doubletsRemoved_threshol
 
 # 🧩 For Debugging Issues
 
+```
+# Name                     Version          Build            Channel
+scanpy                     1.10.3           pypi_0           pypi
+```
+
 ### 💾 Command & Output for Neuorg2
 ```bash
 python print_h5ad.py annotated_reclustered_refined_doubletsRemoved_threshold0.8_neurog2.h5ad 
