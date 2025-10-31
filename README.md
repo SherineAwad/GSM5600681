@@ -122,15 +122,37 @@ The neurog2 samples are analysed in [Neurog2](https://github.com/SherineAwad/Neu
 
 ##### Cutoff 0.05: Retained 12959 genes out of 19807 total
 
-![](heatmapP05.png)
+![](sheatmapP05.png)
 
 ##### Cutoff 0.1: Retained 11143 genes out of 19807 total
-![](heatmapP1.png)
+![](sheatmapP1.png)
 
 #### Cutoff 0.2: Retained 8556 genes out of 19807 total 
-![](heatmapP2.png)
+![](sheatmapP2.png)
 
 #### Cutoff 0.5: Retained 4354 genes out of 19807 total
-![](heatmapP5.png)
+![](sheatmapP5.png)
 
+
+
+#### Now no starbust in annotations 
+
+
+![annotations](figures/WT_annotations.png)
+
+![annotationsON](figures/WT_annotationsON.png)
+
+
+##### Cutoff 0.05: Retained 112811 genes out of 19807 total 
+
+![](heatmapP05.png)
+
+##### Cutoff 0.1: Retained 11011 genes out of 19807 total
+![](heatmapP1.png)
+
+#### Cutoff 0.2: Retained 8406 genes out of 19807 total 
+![](heatmapP2.png)
+
+#### Cutoff 0.5: Retained 4249 genes out of 19807 total 
+![](heatmapP5.png)
 
