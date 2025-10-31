@@ -143,7 +143,7 @@ The neurog2 samples are analysed in [Neurog2](https://github.com/SherineAwad/Neu
 ![annotationsON](figures/WT_annotationsON.png)
 
 
-##### Cutoff 0.05: Retained 112811 genes out of 19807 total 
+##### Cutoff 0.05: Retained 12811 genes out of 19807
 
 ![](heatmapP05.png)
 
