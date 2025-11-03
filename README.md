@@ -116,46 +116,23 @@ The neurog2 samples are analysed in [Neurog2](https://github.com/SherineAwad/Neu
    - The **color intensity** reflects the correlation strength — higher values indicate more similar transcriptional profiles.
 ```
 
-## For testing: WT vs WT 
+## No starbust in annotations 
 
-![WT vs WT](heatmapWT_WT0.0.png)
+### For testing: WT vs WT 
 
-##### Cutoff 0.05: Retained 12959 genes out of 19807 total
+![WT vs WT](heatmapWT_WTp5.png)
 
-![](sheatmapP05.png)
+##### Cutoff 0.5:
 
-##### Cutoff 0.1: Retained 11143 genes out of 19807 total
-![](sheatmapP1.png)
-
-#### Cutoff 0.2: Retained 8556 genes out of 19807 total 
-![](sheatmapP2.png)
-
-#### Cutoff 0.5: Retained 4354 genes out of 19807 total
 ![](sheatmapP5.png)
 
+##### Cutoff 1.0:![](sheatmapP1.png)
+![](sheatmap1.png)
+#### Cutoff 2.0:
+![](sheatmap2.png)
 
-
-#### Now no starbust in annotations 
-
-
-![annotations](figures/WT_annotations.png)
-
-![annotationsON](figures/WT_annotationsON.png)
-
-
-##### Cutoff 0.05: Retained 12811 genes out of 19807
-
-![](heatmapP05.png)
-
-##### Cutoff 0.1: Retained 11011 genes out of 19807 total
-![](heatmapP1.png)
-
-#### Cutoff 0.2: Retained 8406 genes out of 19807 total 
-![](heatmapP2.png)
-
-#### Cutoff 0.5: Retained 4249 genes out of 19807 total 
-![](heatmapP5.png)
-
+#### Cutoff 0.75: 
+![](sheatmapP75.png)
 
 
 ### Expressions CSVs 

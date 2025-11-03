@@ -1,4 +1,3 @@
-#!/usr/bin/env python3
 import scanpy as sc
 import pandas as pd
 import numpy as np
@@ -38,10 +37,14 @@ if adata1.raw is not None:
 if adata2.raw is not None:
     adata2 = adata2.raw.to_adata()
 
-sc.pp.normalize_total(adata1, target_sum=1e4)
+sc.pp.normalize_total(adata1)
 sc.pp.log1p(adata1)
-sc.pp.normalize_total(adata2, target_sum=1e4)
+sc.pp.normalize_total(adata2)
 sc.pp.log1p(adata2)
+
+#scale 
+sc.pp.scale(adata1,max_value=10)
+sc.pp.scale(adata2,max_value=10)
 
 # -------------------------------
 # SUBSET SAMPLES
@@ -59,6 +62,18 @@ adata1_subset = adata1_subset[:, common_genes]
 adata2_subset = adata2_subset[:, common_genes]
 
 # -------------------------------
+# SAVE MEAN EXPRESSION PER SAMPLE
+# -------------------------------
+print("🔹 Saving mean expression CSVs per sample...")
+for sample in args.samples1:
+    ad = adata1[adata1.obs['sample'] == sample].copy()
+    expr = ad.to_df().groupby(ad.obs['celltype'], observed=False).mean()
+    expr.T.to_csv(f"{sample}_mean_expression.csv")
+expr2 = adata2_subset.to_df().groupby(adata2_subset.obs['celltype'], observed=False).mean()
+expr2.T.to_csv(f"{args.sample2}_mean_expression.csv")
+print("✅ Mean expression CSVs saved.")
+
+# -------------------------------
 # AVERAGE EXPRESSION PER CELLTYPE
 # -------------------------------
 print("🔹 Averaging expression per cell type...")
@@ -69,7 +84,6 @@ expr2_ct = adata2_subset.to_df().groupby(adata2_subset.obs['celltype'], observed
 # GENE FILTERING - FIXED
 # -------------------------------
 print("🔹 Filtering genes based on expression cutoff and presence...")
-
 expressed_in_any_ct = (
     (expr1_ct > args.gene_cutoff).any(axis=0) |
     (expr2_ct > args.gene_cutoff).any(axis=0)
@@ -94,18 +108,25 @@ corr_matrix = np.corrcoef(expr1_ct.values, expr2_ct.values)[:expr1_ct.shape[0], 
 corr_matrix = pd.DataFrame(corr_matrix, index=expr1_ct.index, columns=expr2_ct.index)
 
 # -------------------------------
+# DEFINE ORDER OF CELLTYPES
+# -------------------------------
+celltype_order = ["MG", "MGPC", "Rod", "Cones", "BC", "AC", "RGC", "HC"]
+row_order = [ct for ct in celltype_order if ct in corr_matrix.index]
+col_order = [ct for ct in celltype_order if ct in corr_matrix.columns]
+
+# -------------------------------
 # PLOT HEATMAP (blue to red, no white)
 # -------------------------------
 print(f"🔹 Plotting heatmap and saving to {args.output}...")
 plt.figure(figsize=(8, 6))
 vmin = np.nanmin(corr_matrix.values)
 vmax = 1
-sns.heatmap(corr_matrix, cmap='coolwarm', annot=True, fmt=".2f", vmin=vmin, vmax=vmax)
+sns.heatmap(corr_matrix.loc[row_order, col_order], cmap='coolwarm', annot=True, fmt=".2f", vmin=vmin, vmax=vmax)
 plt.xlabel(f"Celltypes in {args.sample2}")
 plt.ylabel(f"Celltypes in {', '.join(args.samples1)}")
 plt.title("Pearson correlation between celltypes (filtered genes)")
 plt.tight_layout()
-plt.savefig(args.output, dpi=600)
+plt.savefig(args.output, dpi=300)
 
 print("✅ Done! Correlation heatmap saved.")
 
