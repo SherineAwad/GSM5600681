@@ -43,8 +43,8 @@ sc.pp.normalize_total(adata2)
 sc.pp.log1p(adata2)
 
 #scale 
-sc.pp.scale(adata1,max_value=10)
-sc.pp.scale(adata2,max_value=10)
+sc.pp.scale(adata1)
+sc.pp.scale(adata2)
 
 # -------------------------------
 # SUBSET SAMPLES
