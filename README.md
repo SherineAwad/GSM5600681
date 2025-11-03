@@ -120,20 +120,21 @@ The neurog2 samples are analysed in [Neurog2](https://github.com/SherineAwad/Neu
 
 ### For testing: WT vs WT 
 
-![WT vs WT](heatmapWT_WTp5.png)
+![WT vs WT](heatmapWT_WTp5.png?v=2)
 
-##### Cutoff 0.5:
+##### Cutoff 0.5: ✅ Retained 5632 genes out of 19807 total.
 
-![](heatmapP5.png)
+![](heatmapP5.png?v=2)
 
-##### Cutoff 1.0:
-![](heatmapP1.png)
+#### Cutoff 0.75: ✅ Retained 3458 genes out of 19807 total.
 
-#### Cutoff 2.0:
-![](heatmap2.png)
+![](heatmapP75.png?v=2)
 
-#### Cutoff 0.75: 
-![](heatmapP75.png)
+##### Cutoff 1.0: ✅ Retained 2260 genes out of 19807 total.
+![](heatmapP1.png?v=2)
+
+#### Cutoff 2.0: ✅ Retained 625 genes out of 19807 total.
+![](heatmap2.png?v=2)
 
 
 ### Expressions CSVs 
