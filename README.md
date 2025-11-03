@@ -126,13 +126,14 @@ The neurog2 samples are analysed in [Neurog2](https://github.com/SherineAwad/Neu
 
 ![](heatmapP5.png)
 
-##### Cutoff 1.0:![](sheatmapP1.png)
-![](heatmap1.png)
+##### Cutoff 1.0:
+![](heatmapP1.png)
+
 #### Cutoff 2.0:
 ![](heatmap2.png)
 
 #### Cutoff 0.75: 
-![](sheatmapP75.png)
+![](heatmapP75.png)
 
 
 ### Expressions CSVs 
